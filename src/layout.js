@@ -59,7 +59,7 @@ const FluidHeight = ({ children }) => <Box sx={{ display: 'table-row', height: '
 
 const HeaderDesktop = ({ tabPage }) => <Container sx={{ minHeight: '283px', position: 'relative' }}>
     <Flex sx={{
-      alignItems: 'center', 
+      alignItems: 'center',
       justifyContent: 'space-between',
       py: '51px',
     }}
@@ -75,7 +75,6 @@ const HeaderDesktop = ({ tabPage }) => <Container sx={{ minHeight: '283px', posi
         }
       }}>
         <Nav href="/">{navTitles.about}</Nav>
-        <Nav href="/donations">{navTitles.donations}</Nav>
         <Nav href="/contact">{navTitles.contact}</Nav>
       </Box>
     </Flex>
@@ -83,7 +82,7 @@ const HeaderDesktop = ({ tabPage }) => <Container sx={{ minHeight: '283px', posi
       color: 'primary',
       borderBottom: '2px solid #ddd'
     }}, py: '28px', position: 'absolute', bottom: 0 }}>
-      {tabPage && tabLinks.map(link => 
+      {tabPage && tabLinks.map(link =>
         <Nav href={`${link.url}`} sx={link.title.toLowerCase() === tabPage ? { '&, &:hover': {borderBottom: '2.4px solid', borderColor: 'primary'}}:{}}>
           {link.title}
         </Nav>)
@@ -103,13 +102,13 @@ const HeaderMobile = () => {
         {menuIsOpen ? <MenuClose /> : <MenuOpen />}
       </Flex>
     </Flex>
-    { menuIsOpen && <Flex sx={{ 
-        position: 'absolute', 
-        top: '64px', 
-        right: 0, 
+    { menuIsOpen && <Flex sx={{
+        position: 'absolute',
+        top: '64px',
+        right: 0,
         minWidth: '200px',
         maxWidth: '100vw',
-        flexDirection: 'column', 
+        flexDirection: 'column',
         backgroundColor: 'background',
         py: '12px',
         px: '24px',
@@ -119,11 +118,10 @@ const HeaderMobile = () => {
         },
         zIndex: 2000
       }}>
-      {tabLinks.map(link => 
+      {tabLinks.map(link =>
         <Nav sx={{ fontSize: 'm'}} href={`${link.url}`}>
           {link.title}
         </Nav>)}
-        <Nav sx={{ fontSize: 'm'}} href="/donations">{navTitles.donations}</Nav>
         <Nav sx={{ fontSize: 'm'}} href="/contact">{navTitles.contact}</Nav>
     </Flex>}
   </Box>
@@ -181,7 +179,7 @@ export default function Layout({ children, tabPage, surfaceColor }) {
             <Box sx={{backgroundColor: `surface.${surfaceColor || 'gray'}`, pb: '55px', pt: ['9px', '55px'], height: '100%' }}>
               <Container>
                 {children}
-              </Container>  
+              </Container>
             </Box>
           </FluidHeight>
           <FixedHeight>
@@ -193,7 +191,7 @@ export default function Layout({ children, tabPage, surfaceColor }) {
                   <Flex sx={{ alignItems: ['flex-start', 'center'], flexDirection: ['column', 'row'], mb: ['24px', 0] }}>
                     <Text sx={{ fontSize: ['xs', 'xs'], lineHeight: '1.7em', mb: ['25px', 0] }}>{content.common.licence}</Text>
                     <Box sx={{ width: '3px', height: '3px', borderRadius: '50%', display: ['none', 'block'],
-                      background: '#C4C4C4', mx: '12px', position: 'relative', top: '-2px'}} 
+                      background: '#C4C4C4', mx: '12px', position: 'relative', top: '-2px'}}
                     />
                     <Nav href="/terms-of-service" sx={{ color: 'onLightGray', fontSize: 'xs', position: 'relative', top: '-2px' }}>
                       {navTitles["terms-of-service"]}
